@@ -1,0 +1,113 @@
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXPENSE OVERSIGHT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 10px 50px;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .chart-container {
+      width: 40%;
+      margin: 20px auto;
+    }
+    .chart {
+      width: 40%;
+      height: 50px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>EXPENSES OVERSIGHT</h1>
+</header>
+
+<nav>
+  <a href="file:///C:/Users/crist/OneDrive/Desktop/games%20files/EXPENSE%20OVERSIGHT/ACCOUNT.html">ACCOUNT</a>
+  <a href="file:///C:/Users/crist/OneDrive/Desktop/games%20files/EXPENSE%20OVERSIGHT/MONEY.html">MONEY</a>
+  <a href="file:///C:/Users/crist/OneDrive/Desktop/games%20files/EXPENSE%20OVERSIGHT/CONVERT.html">CONVERT</a>
+  <a href="file:///C:/Users/crist/OneDrive/Desktop/games%20files/EXPENSE%20OVERSIGHT/HISTORY.html">HISTORY</a>
+</nav>
+
+<main>
+  <h2>WELCOME TO EXPENSE OVERSIGHT!</h2>
+  <p>(Where as You Can Track Your Expenses Freely) </p>
+</main>
+<div class="chart-container">
+  <canvas class="chart" id="line-chart"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var ctx = document.getElementById('line-chart').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7'],
+        datasets: [{
+          label: 'Percentage',
+          data: [1, 14, 29, 44, 59, 74, 100], // Data representing percentage values
+          borderColor: 'blue',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              callback: function(value) {
+                return value + "%"; // Add percentage symbol to y-axis ticks
+              }
+            }
+          }]
+        }
+      }
+    });
+  });
+</script>
+<footer>
+  <p>&copy; 2024 EXPENSE OVERSIGHT.</p>
+</footer>
+
+</body>
+</html>
